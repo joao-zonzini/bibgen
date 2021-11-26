@@ -48,10 +48,11 @@ def selecionado_livro():
 
 def menu_tipo_ref():
     print("Opções de referência:")
-    print("1 - Livro")
-    print("2 - Livro de vários volumes")
-    print("3 - Artigo")
-    print("4 - Dissertação de mestrado")
+    print("1 - Livro.")
+    print("2 - Livro de vários volumes.")
+    print("3 - Artigo.")
+    print("4 - Dissertação de mestrado.")
+    print("0 - Cancelar e sair.")
 
     return(int(input("Selecione: ")))
 
@@ -96,7 +97,10 @@ def selecionar_referencia():
         tipo_ref = menu_tipo_ref()
         limpar_tela()
 
-        if tipo_ref == 1:
+        if tipo_ref == 0:
+            print("Você escolheu sair.")
+            quit()
+        elif tipo_ref == 1:
             ref_dict = selecionado_livro()
             classe = "@book{"
             break
